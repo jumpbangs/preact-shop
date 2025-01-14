@@ -1,3 +1,4 @@
+import { useEffect } from 'preact/hooks';
 import {
 	hydrate,
 	LocationProvider,
@@ -5,15 +6,28 @@ import {
 	Route,
 	Router,
 } from 'preact-iso';
+import ProductStore from 'store/ProductStore';
 
-import Footer from './components/footer/Footer.js';
-import Header from './components/header/Header.js';
-import { NotFound } from './pages/_404.jsx';
-import Home from './pages/home/index.js';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import { NotFound } from 'pages/_404.jsx';
+import Home from 'pages/Home';
+import { fetchAllProducts } from 'services/productEndpoints';
 
 import './index.css';
 
 const App = () => {
+	const setProducts = ProductStore((state) => state.setProducts);
+	const productList = ProductStore((state) => state.products);
+
+	useEffect(() => {
+		if (productList.length === 0) {
+			fetchAllProducts().then((value) => {
+				setProducts(value.products);
+			});
+		}
+	}, []);
+
 	return (
 		<LocationProvider>
 			<Header />

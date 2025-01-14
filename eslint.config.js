@@ -42,12 +42,12 @@ export default [
 				{
 					groups: [
 						// Packages `react` related packages come first.
-						['^react', '^@?\\w'],
+						['^react', '^preact', '^@?\\w'],
 						// Mui packages
 						// ['^@mui'],
 						// Internal packages.
 						[
-							'^(@|components|services|pages|features|common|utils|routes|types)(/.*|$)',
+							'^(components|services|pages|features|common|utils|routes|types)(/.*|$)',
 						],
 						// Internal packages.
 						['^()(/.*|$)'],
