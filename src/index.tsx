@@ -10,8 +10,8 @@ import ProductStore from 'store/ProductStore';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import { NotFound } from 'pages/_404.jsx';
 import Home from 'pages/Home';
+import { NotFound } from 'pages/NotFound.js';
 import { fetchAllProducts } from 'services/productEndpoints';
 
 import './index.css';

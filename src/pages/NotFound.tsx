@@ -1,5 +1,5 @@
-import { Home } from 'feather-icons-react';
 import { useLocation } from 'preact-iso';
+import { Home } from 'feather-icons-react';
 
 export const NotFound = () => {
 	const { route } = useLocation();
