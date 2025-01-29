@@ -1,3 +1,5 @@
+import { useState } from 'preact/hooks';
+import { useLocation } from 'preact-iso';
 import {
 	Menu,
 	Search,
@@ -5,23 +7,9 @@ import {
 	ShoppingCart,
 	X,
 } from 'feather-icons-react';
-import { useState } from 'preact/hooks';
-import { useLocation } from 'preact-iso';
 
-const mainOptions = [
-	{
-		name: 'New',
-	},
-	{
-		name: 'Men',
-	},
-	{
-		name: 'Women',
-	},
-	{
-		name: 'Kids',
-	},
-];
+import { PRODUCT_CATEGORY } from 'utils/constants';
+const mainOptions = PRODUCT_CATEGORY;
 
 const Header = () => {
 	const [openMenu, setOpenMenu] = useState(false);
@@ -67,7 +55,8 @@ const Header = () => {
 									<li class="max-lg:border-b max-lg:py-3 px-3">
 										<a
 											href="javascript:void(0)"
-											class={`${index === 0 ? `text-[#007bff]` : `text-white`} hover:text-[#007bff] text-[15px] block font-semibold`}
+											// ${index === 0 ? `text-[#007bff]` : `text-white`}
+											class={` hover:text-[#007bff] text-[15px] block font-semibold`}
 										>
 											{item.name}
 										</a>

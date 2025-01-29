@@ -10,12 +10,3 @@ export const fetchAllProducts = async () => {
 		return error;
 	}
 };
-
-export const fetchAllProductsByCategory = async () => {
-	try {
-		const response = await ky.get(`${PRODUCT_URL}/categories`);
-		return response.json();
-	} catch (error) {
-		return error;
-	}
-};

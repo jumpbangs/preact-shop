@@ -1,0 +1,18 @@
+name: Django CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: |
+          echo "Running tests once more"
+          git ls-remote https://sram-token:gldt-sGA9oPfFMfv29cPtRebp@gitlab.elementengineering.com.au/apps/d3-charts-react.git
