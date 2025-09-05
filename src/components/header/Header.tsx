@@ -17,7 +17,7 @@ const Header = () => {
 
 	return (
 		<header class="flex py-3 sm:px-6 px-4 min-h-[75px] tracking-wide relative z-50 ">
-			<div class="flex max-w-screen-xl mx-auto w-full text-white">
+			<div class="flex max-w-(--breakpoint-xl) mx-auto w-full text-white">
 				<div class="flex flex-wrap items-center lg:gap-y-2 gap-4 w-full">
 					<a href="javascript:void(0)" class="max-sm:hidden">
 						<ShoppingBag />
@@ -29,11 +29,11 @@ const Header = () => {
 					<div
 						id="collapseMenu"
 						style={{ display: openMenu ? 'block' : 'none' }}
-						class="lg:ml-6 max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50"
+						class="lg:ml-6 max-lg:hidden lg:block! max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50"
 					>
 						<button
 							id="toggleClose"
-							class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
+							class="lg:hidden fixed top-2 right-4 z-100 rounded-full bg-white w-9 h-9 flex items-center justify-center border"
 							onClick={() => setOpenMenu(false)}
 						>
 							<X color="black" />
@@ -71,7 +71,7 @@ const Header = () => {
 							<input
 								type="text"
 								placeholder="Search something..."
-								class="w-full text-sm bg-transparent outline-none pr-2"
+								class="w-full text-sm bg-transparent outline-hidden pr-2"
 							/>
 							<Search size="18" />
 						</div>
@@ -90,7 +90,7 @@ const Header = () => {
 									</div>
 									<ul
 										tabIndex={0}
-										className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+										className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
 									>
 										<li>
 											<a>Wish item 1</a>
@@ -114,7 +114,7 @@ const Header = () => {
 									</div>
 									<div
 										tabIndex={0}
-										className="card compact dropdown-content bg-base-100 rounded-box z-[1] w-64 shadow"
+										className="card compact dropdown-content bg-base-100 rounded-box z-1 w-64 shadow-sm"
 									>
 										<div tabIndex={0} className="card-body">
 											<h2 className="card-title">Total Item cost: $130</h2>
