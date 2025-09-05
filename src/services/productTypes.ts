@@ -7,6 +7,7 @@ interface ProductDimensions {
 interface ProductMeta {
 	createdAt: Date;
 	updatedAt: Date;
+	b;
 	barcode: string;
 	qrCode: string;
 }
